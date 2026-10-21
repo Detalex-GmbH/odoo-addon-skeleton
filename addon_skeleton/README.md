@@ -20,6 +20,9 @@ addon_skeleton/
 ├── data/
 │   ├── ir_sequence_data.xml     # Nummernkreis SKI/<Jahr>/0001
 │   └── portal_entry_data.xml    # Kachel im Kundenportal
+├── i18n/
+│   ├── addon_skeleton.pot   # Vorlage mit allen übersetzbaren Texten
+│   └── de.po                # deutsche Übersetzung
 ├── controllers/
 │   ├── portal.py            # Webseite: Route /my/skeleton und Kachel-Zähler
 │   └── api.py               # JSON-API mit API-Schlüssel (Bearer)
@@ -27,6 +30,17 @@ addon_skeleton/
     ├── description/         # icon.png, cover.png, index.html
     └── src/                 # SCSS, Bilder (später JS und Owl-Templates)
 ```
+
+## Übersetzungen
+
+Texte im Code und in XML sind englisch. Nach Änderungen die Vorlage neu exportieren und die `.po` nachziehen:
+
+```bash
+odoo i18n export -c /etc/odoo/odoo.conf -d <datenbank> -o addon_skeleton/i18n/addon_skeleton.pot addon_skeleton
+msgmerge -U addon_skeleton/i18n/de.po addon_skeleton/i18n/addon_skeleton.pot
+```
+
+Danach Modul aktualisieren (`-u addon_skeleton`, bei geänderten Übersetzungen mit `--i18n-overwrite`).
 
 ## API ausprobieren
 

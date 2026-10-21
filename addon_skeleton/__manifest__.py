@@ -4,8 +4,8 @@
 {
     # Anzeige im App-Menü
     "name": "Addon Skeleton",
-    "summary": "Vorlage für ein Odoo-Addon: Modell, Rechte, Ansichten, Portal und Daten",
-    "description": "Lehrbeispiel mit allen Bausteinen eines Odoo-Addons.",
+    "summary": "Template for an Odoo addon: model, access rights, views, portal and data",
+    "description": "Teaching example with every building block of an Odoo addon.",
     "category": "Productivity",
     # <Odoo-Version>.<Major>.<Minor>.<Patch>
     "version": "20.0.1.1.0",
