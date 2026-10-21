@@ -8,7 +8,7 @@
     "description": "Lehrbeispiel mit allen Bausteinen eines Odoo-Addons.",
     "category": "Productivity",
     # <Odoo-Version>.<Major>.<Minor>.<Patch>
-    "version": "20.0.1.0.0",
+    "version": "20.0.1.1.0",
     "author": "Detalex GmbH, Dietmar Hamm",
     "maintainer": "Detalex GmbH",
     "website": "https://detalex.de",
@@ -18,6 +18,13 @@
     "depends": [
         "portal",
     ],
+    # Python-Pakete (Importname) und Programme, die auf dem Server
+    # installiert sein müssen; fehlt eines, verweigert Odoo die Installation.
+    # Beispiel: {"python": ["openpyxl"], "bin": ["wkhtmltopdf"]}
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
+    },
     # Wird bei Installation und Update in dieser Reihenfolge geladen:
     # erst Gruppen und Rechte, dann Daten, dann Ansichten und Menüs
     "data": [

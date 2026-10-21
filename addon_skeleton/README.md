@@ -21,11 +21,23 @@ addon_skeleton/
 │   ├── ir_sequence_data.xml     # Nummernkreis SKI/<Jahr>/0001
 │   └── portal_entry_data.xml    # Kachel im Kundenportal
 ├── controllers/
-│   └── portal.py            # Route /my/skeleton und Kachel-Zähler
+│   ├── portal.py            # Webseite: Route /my/skeleton und Kachel-Zähler
+│   └── api.py               # JSON-API mit API-Schlüssel (Bearer)
 └── static/
     ├── description/         # icon.png, cover.png, index.html
     └── src/                 # SCSS, Bilder (später JS und Owl-Templates)
 ```
+
+## API ausprobieren
+
+API-Schlüssel anlegen (Mein Profil › Kontosicherheit › Neuer API-Schlüssel), dann:
+
+```bash
+curl -H "Authorization: Bearer <Schlüssel>" -H "X-Odoo-Database: <datenbank>" https://<host>/skeleton/api/items
+curl -X POST -H "Authorization: Bearer <Schlüssel>" -H "X-Odoo-Database: <datenbank>" https://<host>/skeleton/api/items/1/done
+```
+
+`X-Odoo-Database` ist nur nötig, wenn auf dem Server mehrere Datenbanken laufen. Die Antwort enthält nur Einträge, die der Benutzer laut `ir.access.csv` sehen darf. Abschließen per API dürfen nur Administratoren der App.
 
 ## Eigenes Modul daraus machen
 
