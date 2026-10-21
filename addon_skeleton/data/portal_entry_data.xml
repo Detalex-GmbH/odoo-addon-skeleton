@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Kachel auf /my; sichtbar, sobald der Zähler skeleton_item_count größer 0 ist -->
+    <record id="portal_entry_skeleton_items" model="portal.entry">
+        <field name="name">Skeleton Items</field>
+        <field name="description">Entries shared with your company</field>
+        <field name="url">/my/skeleton</field>
+        <field name="image" type="bytes" file="addon_skeleton/static/src/img/portal_card.svg"/>
+        <field name="placeholder_count">skeleton_item_count</field>
+        <field name="category">common_category</field>
+        <field name="sequence" eval="200"/>
+    </record>
+</odoo>

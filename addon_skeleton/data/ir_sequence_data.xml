@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- noupdate: wird nur bei der Installation angelegt, ein Update überschreibt Änderungen nicht -->
+<odoo noupdate="1">
+    <record id="seq_skeleton_item" model="ir.sequence">
+        <field name="name">Skeleton Item</field>
+        <field name="code">skeleton.item</field>
+        <field name="prefix">SKI/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>

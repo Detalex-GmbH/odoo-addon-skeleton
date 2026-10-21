@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+access_skeleton_item_user,Skeleton Item: User,skeleton.item,group_skeleton_user,cru,
+access_skeleton_item_manager,Skeleton Item: Administrator,skeleton.item,group_skeleton_manager,crud,
+access_skeleton_item_portal,Skeleton Item: Portal (own company),skeleton.item,base.group_portal,r,"[('partner_id', 'child_of', [user.commercial_partner_id.id])]"

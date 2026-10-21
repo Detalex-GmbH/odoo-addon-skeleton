@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Brotkrumen-Eintrag "Skeleton Items" auf den Portalseiten -->
+    <template id="portal_breadcrumbs_skeleton" inherit_id="portal.portal_breadcrumbs" priority="40">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'skeleton_item'" class="breadcrumb-item active">Skeleton Items</li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_skeleton_items" name="My Skeleton Items">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar" title.translate="Skeleton Items"/>
+            <div t-if="not items" class="alert alert-info" role="alert">There are no items yet.</div>
+            <t t-if="items" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th class="text-end">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="items" t-as="item">
+                        <td><span t-field="item.code"/></td>
+                        <td><span t-field="item.name"/></td>
+                        <td><span t-field="item.date"/></td>
+                        <td class="text-end"><span class="badge text-bg-light" t-field="item.state"/></td>
+                    </tr>
+                </tbody>
+            </t>
+        </t>
+    </template>
+</odoo>

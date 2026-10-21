@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Hauptmenü mit App-Icon, darunter ein Eintrag mit der Aktion -->
+    <menuitem id="menu_skeleton_root" name="Skeleton"
+              web_icon="addon_skeleton,static/description/icon.png"
+              groups="group_skeleton_user" sequence="200"/>
+    <menuitem id="menu_skeleton_items" name="Items" parent="menu_skeleton_root"
+              action="skeleton_item_action" sequence="10"/>
+</odoo>
